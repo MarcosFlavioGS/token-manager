@@ -1,6 +1,4 @@
-# JustTravelTest
-
-Esse é meu repositório para o teste técnico para a empresa Just Travel.
+# Token Manager
 
 ## 📋 Sobre o Projeto
 
@@ -97,7 +95,7 @@ DELETE /api/tokens/active
 
 A documentação completa do projeto, incluindo referência da API e todos os módulos, está disponível em:
 
-**[📖 Ver Documentação Completa](https://marcosflaviogs.github.io/just-travel-test/)**
+**[📖 Ver Documentação Completa](https://marcosflaviogs.github.io/token-manager/)**
 
 A documentação é gerada automaticamente pelo ExDoc e está disponível localmente em `docs/` após executar `mix docs`.
 
