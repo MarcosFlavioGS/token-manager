@@ -9,6 +9,7 @@ defmodule JustTravelTest.Tokens.Registration do
   alias JustTravelTest.Tokens.Release
   alias JustTravelTest.Tokens.Queries
   alias JustTravelTest.Tokens.Logger
+  alias JustTravelTest.Tokens.WebHookNotification
 
   @max_active_tokens Application.compile_env(
                        :just_travel_test,
@@ -57,6 +58,10 @@ defmodule JustTravelTest.Tokens.Registration do
         )
 
         Logger.log_activation_success(token_id, user_id, %{duration_ms: duration})
+
+        # Send webhook notification
+
+        WebHookNotification.send_notification({user_id, token_id})
 
       {:error, reason} ->
         :telemetry.execute(
