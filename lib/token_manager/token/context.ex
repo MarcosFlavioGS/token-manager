@@ -1,0 +1,33 @@
+defmodule TokenManager.Tokens do
+  @moduledoc """
+  Context for managing tokens and their usage.
+
+  This module provides a unified API that delegates to specialized modules:
+  - `TokenManager.Tokens.Registration` - Token registration and activation
+  - `TokenManager.Tokens.Release` - Token release operations
+  - `TokenManager.Tokens.Queries` - Token query operations
+  - `TokenManager.Tokens.History` - Usage history operations
+  - `TokenManager.Tokens.Expiration` - Expired token management
+  """
+
+  # Delegate to specialized modules
+  defdelegate register_token_usage(user_id), to: TokenManager.Tokens.Registration
+
+  defdelegate release_token(token_id), to: TokenManager.Tokens.Release
+  defdelegate release_token_by_user(user_id), to: TokenManager.Tokens.Release
+  defdelegate release_oldest_active_token(), to: TokenManager.Tokens.Release
+  defdelegate clear_all_active_tokens(), to: TokenManager.Tokens.Release
+
+  defdelegate list_all_tokens(opts \\ []), to: TokenManager.Tokens.Queries
+  defdelegate list_available_tokens(), to: TokenManager.Tokens.Queries
+  defdelegate list_active_tokens(opts \\ []), to: TokenManager.Tokens.Queries
+  defdelegate get_token_by_id(token_id, opts \\ []), to: TokenManager.Tokens.Queries
+  defdelegate get_token_by_user(user_id), to: TokenManager.Tokens.Queries
+  defdelegate count_active_tokens(), to: TokenManager.Tokens.Queries
+  defdelegate count_available_tokens(), to: TokenManager.Tokens.Queries
+
+  defdelegate get_token_usage_history(token_id, opts \\ []), to: TokenManager.Tokens.History
+
+  defdelegate find_expired_tokens(), to: TokenManager.Tokens.Expiration
+  defdelegate release_expired_tokens(), to: TokenManager.Tokens.Expiration
+end

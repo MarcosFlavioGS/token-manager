@@ -103,7 +103,7 @@ A documentação é gerada automaticamente pelo ExDoc e está disponível localm
 
 ```
 lib/
-  just_travel_test/
+  token_manager/
     token/              # Módulos de gerenciamento de tokens
       context.ex        # Facade principal
       registration.ex   # Ativação de tokens
@@ -115,7 +115,7 @@ lib/
       logger.ex         # Logging estruturado
       token_schema.ex   # Schema do token
       token_usage_schema.ex  # Schema de histórico
-  just_travel_test_web/
+  token_manager_web/
     controllers/
       token/            # Controllers da API
       health_controller.ex  # Health check endpoint
@@ -132,7 +132,7 @@ docs/                   # Documentação gerada pelo ExDoc
 O sistema é configurável através de `config/config.exs`:
 
 ```elixir
-config :just_travel_test, JustTravelTest.Tokens,
+config :token_manager, TokenManager.Tokens,
   max_active_tokens: 100,
   token_lifetime_minutes: 2,
   check_interval_seconds: 30
@@ -156,7 +156,7 @@ Para produção, configure as seguintes variáveis de ambiente:
 
 **Exemplo**:
 ```bash
-export DATABASE_URL=ecto://postgres:password@localhost:5432/just_travel_test_prod
+export DATABASE_URL=ecto://postgres:password@localhost:5432/token_manager_prod
 export SECRET_KEY_BASE=$(mix phx.gen.secret)
 export PHX_HOST=api.example.com
 export PORT=4000

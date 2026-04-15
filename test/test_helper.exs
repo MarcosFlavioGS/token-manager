@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(JustTravelTest.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(TokenManager.Repo, :manual)

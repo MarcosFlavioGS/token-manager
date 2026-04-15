@@ -1,9 +1,9 @@
-defmodule JustTravelTest.MixProject do
+defmodule TokenManager.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :just_travel_test,
+      app: :token_manager,
       version: "1.0.0",
       elixir: "~> 1.19.4",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -22,7 +22,7 @@ defmodule JustTravelTest.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {JustTravelTest.Application, []},
+      mod: {TokenManager.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

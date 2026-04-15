@@ -1,10 +1,10 @@
-defmodule JustTravelTest.TokenFactory do
+defmodule TokenManager.TokenFactory do
   @moduledoc """
   Factory functions for creating test tokens and token usages.
   """
 
-  alias JustTravelTest.Repo
-  alias JustTravelTest.Token.{TokenSchema, TokenUsageSchema}
+  alias TokenManager.Repo
+  alias TokenManager.Token.{TokenSchema, TokenUsageSchema}
 
   @doc """
   Creates a token with the given attributes.

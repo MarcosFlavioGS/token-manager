@@ -1,4 +1,4 @@
-defmodule JustTravelTest.Repo.Migrations.CreateTokenUsages do
+defmodule TokenManager.Repo.Migrations.CreateTokenUsages do
   use Ecto.Migration
 
   def change do

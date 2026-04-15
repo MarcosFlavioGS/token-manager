@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :just_travel_test, JustTravelTest.Repo,
+config :token_manager, TokenManager.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "just_travel_test_dev",
+  database: "token_manager_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,7 +16,7 @@ config :just_travel_test, JustTravelTest.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :just_travel_test, JustTravelTestWeb.Endpoint,
+config :token_manager, TokenManagerWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: String.to_integer(System.get_env("PORT") || "4000")],
@@ -50,7 +50,7 @@ config :just_travel_test, JustTravelTestWeb.Endpoint,
 # different ports.
 
 # Enable dev routes for dashboard and mailbox
-config :just_travel_test, dev_routes: true
+config :token_manager, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :default_formatter, format: "[$level] $message\n"

@@ -7,19 +7,19 @@
 # General application configuration
 import Config
 
-config :just_travel_test,
-  ecto_repos: [JustTravelTest.Repo],
+config :token_manager,
+  ecto_repos: [TokenManager.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :just_travel_test, JustTravelTestWeb.Endpoint,
+config :token_manager, TokenManagerWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [json: JustTravelTestWeb.ErrorJSON],
+    formats: [json: TokenManagerWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: JustTravelTest.PubSub,
+  pubsub_server: TokenManager.PubSub,
   live_view: [signing_salt: "wPALFgd7"]
 
 # Configures the mailer
@@ -29,7 +29,7 @@ config :just_travel_test, JustTravelTestWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :just_travel_test, JustTravelTest.Mailer, adapter: Swoosh.Adapters.Local
+config :token_manager, TokenManager.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configures Elixir's Logger
 config :logger, :default_formatter,
@@ -40,7 +40,7 @@ config :logger, :default_formatter,
 config :phoenix, :json_library, Jason
 
 # Token management configuration
-config :just_travel_test, JustTravelTest.Tokens,
+config :token_manager, TokenManager.Tokens,
   max_active_tokens: 100,
   token_lifetime_minutes: 2,
   check_interval_seconds: 30
